@@ -20,6 +20,11 @@ h1{font-size:38px;line-height:1.15;margin:.3em 0}
 .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 .preco,.valor{font-weight:800;color:#101c3d}
 .destaque{border:2px solid #2456d6}
+.consulta-unica{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:16px;flex-wrap:wrap}
+.consulta-unica h3{margin:0 0 6px}
+.consulta-unica p{margin:0}
+.consulta-cta{text-align:right;display:flex;align-items:center;gap:14px}
+.consulta-cta .valor{font-size:24px}
 .passos li{margin:8px 0}
 .form label{display:block;margin:10px 0;font-weight:600}
 .form input,.form select{width:100%;padding:10px;margin-top:6px;border:1px solid #c6d3ea;border-radius:8px}
