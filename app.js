@@ -39,11 +39,8 @@ if (formPix) formPix.addEventListener('submit', function (e) {
   }).then(function (r) { return r.json(); })
     .then(function (j) {
       if (!j.ok) { msg.textContent = j.erro || 'Falha ao gerar Pix.'; return; }
-      msg.textContent = '';
-      document.getElementById('qr-area').hidden = false;
-      document.getElementById('qr-img').src = 'data:image/png;base64,' + j.brCodeBase64;
-      var btn = document.getElementById('btn-copia-cola');
-      btn.onclick = function () { if (navigator.clipboard) navigator.clipboard.writeText(j.brCode).then(function () { btn.textContent = 'Código copiado!'; }); };
+      msg.textContent = 'Checkout criado! Abrindo pagamento...';
+      window.open(j.url, '_blank', 'noopener');
     }).catch(function () { msg.textContent = 'Falha de conexão. Tente mais tarde.'; });
 });
 
