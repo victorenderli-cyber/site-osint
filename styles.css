@@ -1,0 +1,30 @@
+*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:#16213a;background:#f6f8fc;line-height:1.5}
+.container{max-width:1020px;margin:0 auto;padding:0 20px}
+.topo{background:#101c3d;color:#fff;position:sticky;top:0;z-index:10}
+.topo-in{display:flex;align-items:center;justify-content:space-between;padding:14px 20px}
+.logo{font-weight:800;font-size:20px}.logo span{color:#5aa2ff}
+nav a{color:#dbe6ff;margin:0 10px;text-decoration:none;font-size:15px}
+.btn{display:inline-block;background:#2456d6;color:#fff;padding:10px 18px;border-radius:8px;text-decoration:none;border:0;cursor:pointer}
+.btn.grande{font-size:17px;padding:13px 22px}
+.btn.ghost{background:transparent;border:2px solid #2456d6;color:#2456d6}
+.hero{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;padding:44px 20px}
+.kicker{color:#2456d6;font-weight:700;text-transform:uppercase;font-size:13px;letter-spacing:.5px}
+h1{font-size:38px;line-height:1.15;margin:.3em 0}
+.sub{font-size:18px;color:#33415e}
+.cta-row{display:flex;gap:12px;margin:18px 0;flex-wrap:wrap}
+.nota,.mini{font-size:13px;color:#5b6b8c}
+.card{background:#fff;border:1px solid #e2e9f5;border-radius:12px;padding:20px;box-shadow:0 2px 10px rgba(16,28,61,.05)}
+.hero-card h3{margin-top:0}
+.hero-card ul{padding-left:18px}
+.bloco{padding:26px 20px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.preco,.valor{font-weight:800;color:#101c3d}
+.destaque{border:2px solid #2456d6}
+.passos li{margin:8px 0}
+.form label{display:block;margin:10px 0;font-weight:600}
+.form input,.form select{width:100%;padding:10px;margin-top:6px;border:1px solid #c6d3ea;border-radius:8px}
+.check{font-weight:400;font-size:14px}
+footer{background:#101c3d;color:#cdd9f5;margin-top:30px}
+.foot{padding:24px 20px}
+code{background:#eef3ff;padding:1px 6px;border-radius:6px}
+@media(max-width:800px){.hero,.grid3{grid-template-columns:1fr}h1{font-size:30px}nav a{margin:0 6px}}
