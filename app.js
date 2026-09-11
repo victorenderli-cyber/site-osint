@@ -5,7 +5,9 @@ var CONFIG = {
   STRIPE_LINK: 'https://buy.stripe.com/SEU-LINK',
   // Opcional: receba os leads por e-mail via Formspree (grátis).
   // Crie em https://formspree.io, pegue o endpoint e cole abaixo. Vazio = só localStorage.
-  FORMSPREE_ENDPOINT: ''
+  FORMSPREE_ENDPOINT: '',
+  // Backend da automação (Render, grátis). Vazio = confirmação de pagamento desabilitada.
+  BACKEND_URL: ''
 };
 
 (function () {
@@ -23,6 +25,23 @@ var CONFIG = {
     });
   });
 })();
+
+var formConfirmar = document.getElementById('confirmar');
+if (formConfirmar) formConfirmar.addEventListener('submit', function (e) {
+  e.preventDefault();
+  var f = new FormData(e.target);
+  var msg = document.getElementById('msg-pag');
+  if (!CONFIG.BACKEND_URL) { msg.textContent = 'Confirmação automática ainda não configurada. Envie o comprovante pelo contato.'; return; }
+  msg.textContent = 'Verificando pagamento...';
+  fetch(CONFIG.BACKEND_URL.replace(/\/$/, '') + '/api/confirmar', {
+    method: 'POST', headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ email: f.get('email'), tipo: f.get('tipo'), alvo: f.get('alvo'), payment_id: f.get('payment_id') })
+  }).then(function (r) { return r.json().then(function (j) { return { ok: r.ok, j: j }; }); })
+    .then(function (res) {
+      msg.textContent = res.j.msg || res.j.erro || 'Resposta do servidor.';
+      if (res.ok) e.target.reset();
+    }).catch(function () { msg.textContent = 'Falha de conexão com o servidor. Tente mais tarde.'; });
+});
 
 document.getElementById('lead').addEventListener('submit', function (e) {
   e.preventDefault();

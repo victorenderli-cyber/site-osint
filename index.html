@@ -143,6 +143,21 @@
     </div>
   </div>
   <p class="mini">Contratação mediante proposta e confirmação do escopo por e-mail. Diagnóstico inicial gratuito, sem cobrança.</p>
+  <form id="confirmar" class="card form">
+    <h3>Já paguei — receber consulta única</h3>
+    <label>E-mail para receber o relatório<input name="email" type="email" required autocomplete="email"></label>
+    <label>Tipo
+      <select name="tipo">
+        <option value="email">E-mail</option>
+        <option value="username">Username</option>
+        <option value="dominio">Domínio</option>
+      </select>
+    </label>
+    <label>Alvo (1 e-mail, username ou domínio)<input name="alvo" required placeholder="alvo@exemplo.com"></label>
+    <label>ID do pagamento (comprovante Mercado Pago)<input name="payment_id" required inputmode="numeric" placeholder="ex: 12345678901"></label>
+    <button class="btn grande" type="submit">Confirmar pagamento e gerar relatório</button>
+    <p id="msg-pag" class="mini" role="status"></p>
+  </form>
 </section>
 
 <section id="faq" class="container bloco">
