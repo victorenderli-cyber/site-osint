@@ -126,10 +126,26 @@
   <h2>Pagamento</h2>
   <div class="grid3">
     <div class="card">
-      <h3>Pix</h3>
-      <p>Pagamento instantâneo com confirmação por e-mail.</p>
-      <p class="mini">Chave Pix: <strong id="pix-chave">configure em app.js (PIX_CHAVE)</strong></p>
-      <button class="btn" id="btn-pix" type="button">Copiar chave Pix</button>
+      <h3>Pix automático</h3>
+      <p>QR gerado na hora. Pagou, o relatório sai sozinho por e-mail.</p>
+      <form id="pix-auto" class="mini-form">
+        <label>E-mail<input name="email" type="email" required></label>
+        <label>Tipo
+          <select name="tipo">
+            <option value="email">E-mail</option>
+            <option value="username">Username</option>
+            <option value="dominio">Domínio</option>
+          </select>
+        </label>
+        <label>Alvo<input name="alvo" required placeholder="alvo@exemplo.com"></label>
+        <button class="btn" type="submit">Gerar Pix R$ 49,90</button>
+      </form>
+      <div id="qr-area" hidden>
+        <img id="qr-img" alt="QR Code Pix" style="max-width:220px">
+        <p><button class="btn ghost" id="btn-copia-cola" type="button">Copiar Pix copia e cola</button></p>
+        <p class="mini">Aguardando pagamento… o relatório chega por e-mail automaticamente.</p>
+      </div>
+      <p id="msg-pix" class="mini" role="status"></p>
     </div>
     <div class="card">
       <h3>Mercado Pago</h3>

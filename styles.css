@@ -29,6 +29,9 @@ h1{font-size:38px;line-height:1.15;margin:.3em 0}
 .form label{display:block;margin:10px 0;font-weight:600}
 .form input,.form select{width:100%;padding:10px;margin-top:6px;border:1px solid #c6d3ea;border-radius:8px}
 .check{font-weight:400;font-size:14px}
+.mini-form label{display:block;margin:8px 0;font-weight:600;font-size:14px}
+.mini-form input,.mini-form select{width:100%;padding:8px;margin-top:4px;border:1px solid #c6d3ea;border-radius:8px}
+.mini-form .btn{margin-top:8px}
 footer{background:#101c3d;color:#cdd9f5;margin-top:30px}
 .foot{padding:24px 20px}
 code{background:#eef3ff;padding:1px 6px;border-radius:6px}

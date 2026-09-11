@@ -26,6 +26,27 @@ var CONFIG = {
   });
 })();
 
+var formPix = document.getElementById('pix-auto');
+if (formPix) formPix.addEventListener('submit', function (e) {
+  e.preventDefault();
+  var f = new FormData(e.target);
+  var msg = document.getElementById('msg-pix');
+  if (!CONFIG.BACKEND_URL) { msg.textContent = 'Pix automático ainda não configurado.'; return; }
+  msg.textContent = 'Gerando Pix...';
+  fetch(CONFIG.BACKEND_URL.replace(/\/$/, '') + '/api/criar-pix', {
+    method: 'POST', headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ email: f.get('email'), tipo: f.get('tipo'), alvo: f.get('alvo') })
+  }).then(function (r) { return r.json(); })
+    .then(function (j) {
+      if (!j.ok) { msg.textContent = j.erro || 'Falha ao gerar Pix.'; return; }
+      msg.textContent = '';
+      document.getElementById('qr-area').hidden = false;
+      document.getElementById('qr-img').src = 'data:image/png;base64,' + j.brCodeBase64;
+      var btn = document.getElementById('btn-copia-cola');
+      btn.onclick = function () { if (navigator.clipboard) navigator.clipboard.writeText(j.brCode).then(function () { btn.textContent = 'Código copiado!'; }); };
+    }).catch(function () { msg.textContent = 'Falha de conexão. Tente mais tarde.'; });
+});
+
 var formConfirmar = document.getElementById('confirmar');
 if (formConfirmar) formConfirmar.addEventListener('submit', function (e) {
   e.preventDefault();
