@@ -32,14 +32,14 @@ if (formPix) formPix.addEventListener('submit', function (e) {
   var f = new FormData(e.target);
   var msg = document.getElementById('msg-pix');
   if (!CONFIG.BACKEND_URL) { msg.textContent = 'Pix automático ainda não configurado.'; return; }
-  msg.textContent = 'Gerando Pix...';
-  fetch(CONFIG.BACKEND_URL.replace(/\/$/, '') + '/api/criar-pix', {
+  msg.textContent = 'Preparando checkout...';
+  fetch(CONFIG.BACKEND_URL.replace(/\/$/, '') + '/api/iniciar', {
     method: 'POST', headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ email: f.get('email'), tipo: f.get('tipo'), alvo: f.get('alvo') })
   }).then(function (r) { return r.json(); })
     .then(function (j) {
-      if (!j.ok) { msg.textContent = j.erro || 'Falha ao gerar Pix.'; return; }
-      msg.textContent = 'Checkout criado! Abrindo pagamento...';
+      if (!j.ok) { msg.textContent = j.erro || 'Falha ao preparar pagamento.'; return; }
+      msg.textContent = 'Abrindo pagamento... após pagar, o relatório chega por e-mail.';
       window.open(j.url, '_blank', 'noopener');
     }).catch(function () { msg.textContent = 'Falha de conexão. Tente mais tarde.'; });
 });
