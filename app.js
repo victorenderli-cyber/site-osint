@@ -7,7 +7,7 @@ var CONFIG = {
   // Crie em https://formspree.io, pegue o endpoint e cole abaixo. Vazio = só localStorage.
   FORMSPREE_ENDPOINT: '',
   // Backend da automação (Render, grátis). Vazio = confirmação de pagamento desabilitada.
-  BACKEND_URL: ''
+  BACKEND_URL: 'https://site-osint-backend.onrender.com'
 };
 
 (function () {
