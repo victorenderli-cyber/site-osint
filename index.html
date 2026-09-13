@@ -181,24 +181,15 @@
 <section id="contato" class="container bloco">
   <h2>Peça o diagnóstico gratuito</h2>
   <form id="lead" class="card form">
-    <label>Nome<input name="nome" required autocomplete="name"></label>
-    <label>E-mail corporativo<input name="email" type="email" required autocomplete="email"></label>
-    <label>Domínio da empresa<input name="dominio" placeholder="exemplo.com.br" required></label>
-    <label>Cargo
-      <select name="cargo">
-        <option>CISO / Segurança</option>
-        <option>DPO / Compliance</option>
-        <option>TI / Infraestrutura</option>
-        <option>Outro</option>
-      </select>
-    </label>
-    <label class="check"><input type="checkbox" required> Autorizo contato comercial e confirmo que solicito avaliação do meu próprio domínio corporativo.</label>
-    <button class="btn grande" type="submit">Enviar pedido</button>
+    <label>Seu nome<input name="nome" required autocomplete="name"></label>
+    <label>WhatsApp ou e-mail<input name="contato" required placeholder="(55) 99999-9999 ou voce@empresa.com.br"></label>
+    <button class="btn grande" type="submit">Quero meu diagnóstico</button>
     <p id="msg" class="mini" role="status"></p>
   </form>
 </section>
 </main>
 
+<a id="wa-float" href="#" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">WhatsApp</a>
 <footer>
   <div class="container foot">
     <p><strong>OSINT Protege</strong> — inteligência de fontes abertas para defesa. Operação passiva, ética e conforme LGPD.</p>

@@ -35,4 +35,5 @@ h1{font-size:38px;line-height:1.15;margin:.3em 0}
 footer{background:#101c3d;color:#cdd9f5;margin-top:30px}
 .foot{padding:24px 20px}
 code{background:#eef3ff;padding:1px 6px;border-radius:6px}
+#wa-float{position:fixed;right:18px;bottom:18px;background:#25d366;color:#fff;font-weight:800;padding:14px 20px;border-radius:999px;text-decoration:none;box-shadow:0 4px 14px rgba(0,0,0,.25);z-index:50}
 @media(max-width:800px){.hero,.grid3{grid-template-columns:1fr}h1{font-size:30px}nav a{margin:0 6px}}

@@ -7,10 +7,21 @@ var CONFIG = {
   // Crie em https://formspree.io, pegue o endpoint e cole abaixo. Vazio = só localStorage.
   FORMSPREE_ENDPOINT: '',
   // Backend da automação (Render, grátis). Vazio = confirmação de pagamento desabilitada.
-  BACKEND_URL: 'https://site-osint-backend.onrender.com'
+  BACKEND_URL: 'https://site-osint-backend.onrender.com',
+  // Seu WhatsApp comercial (só números, com DDI+DDD). Vazio = botão oculto.
+  WHATSAPP: '',
+  WHATSAPP_MSG: 'Olá! Quero o diagnóstico gratuito da minha empresa.'
 };
 
 (function () {
+  var wa = document.getElementById('wa-float');
+  if (wa) {
+    if (CONFIG.WHATSAPP) {
+      wa.href = 'https://wa.me/' + CONFIG.WHATSAPP + '?text=' + encodeURIComponent(CONFIG.WHATSAPP_MSG);
+    } else {
+      wa.style.display = 'none';
+    }
+  }
   var pixEl = document.getElementById('pix-chave');
   if (pixEl && CONFIG.PIX_CHAVE !== 'SUA-CHAVE-PIX-AQUI') pixEl.textContent = CONFIG.PIX_CHAVE;
   var mp = document.getElementById('link-mp');
@@ -65,21 +76,20 @@ document.getElementById('lead').addEventListener('submit', function (e) {
   e.preventDefault();
   var f = new FormData(e.target);
   var nome = (f.get('nome') || '').toString().trim();
-  var email = (f.get('email') || '').toString().trim();
-  var dominio = (f.get('dominio') || '').toString().trim();
+  var contato = (f.get('contato') || '').toString().trim();
   var msg = document.getElementById('msg');
-  if (!nome || !dominio) { msg.textContent = 'Preencha nome e domínio.'; return; }
-  var lead = { nome: nome, email: email, dominio: dominio, cargo: f.get('cargo'), data: new Date().toISOString() };
+  if (!nome || !contato) { msg.textContent = 'Preencha nome e contato.'; return; }
+  var lead = { nome: nome, contato: contato, data: new Date().toISOString() };
   var leads = [];
   try { leads = JSON.parse(localStorage.getItem('osint_leads') || '[]'); } catch (err) { leads = []; }
   leads.push(lead);
   try { localStorage.setItem('osint_leads', JSON.stringify(leads)); } catch (err) {}
   if (CONFIG.FORMSPREE_ENDPOINT) {
     fetch(CONFIG.FORMSPREE_ENDPOINT, { method: 'POST', headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' }, body: JSON.stringify(lead) })
-      .then(function () { msg.textContent = 'Recebido, ' + nome + '. Retornaremos com o diagnóstico gratuito para ' + dominio + '.'; e.target.reset(); })
+      .then(function () { msg.textContent = 'Recebido, ' + nome + '! Te chamo em instantes.'; e.target.reset(); })
       .catch(function () { msg.textContent = 'Salvo localmente. Falha ao enviar ao e-mail — confira o endpoint.'; });
   } else {
-    msg.textContent = 'Recebido, ' + nome + '. Retornaremos com o diagnóstico gratuito para ' + dominio + '.';
+    msg.textContent = 'Recebido, ' + nome + '! Te chamo em instantes.';
     e.target.reset();
   }
 });
