@@ -18,6 +18,14 @@ nav a:hover{color:#fff}
 .hero h1{font-size:42px;line-height:1.12;margin:12px 0 14px}
 .hero .sub{font-size:18px;color:#cdd9f5;max-width:480px}
 .cta-row{display:flex;gap:12px;margin-top:22px;flex-wrap:wrap}
+.stats{display:flex;gap:26px;margin-top:20px}
+.stats div{display:flex;flex-direction:column}
+.stats strong{font-size:26px;color:#fff}
+.stats span{font-size:13px;color:#9db4e8}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:18px}
+.step .n{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#2456d6,#3b82f6);color:#fff;font-weight:800;margin-bottom:8px}
+.step h3{font-size:16px;margin:0 0 6px}
+@media(max-width:860px){.steps{grid-template-columns:1fr 1fr}}
 .hero .btn.ghost{border-color:#8fb4ff;color:#fff;background:rgba(255,255,255,.08)}
 .card{background:#fff;border:1px solid #e4eaf6;border-radius:16px;padding:24px;box-shadow:0 8px 28px rgba(16,28,61,.10)}
 .hero-card h3{font-size:20px}
