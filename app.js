@@ -21,6 +21,52 @@ var CONFIG = {
 var btnHotmart = document.getElementById('btn-hotmart');
 if (btnHotmart && CONFIG.HOTMART_URL) btnHotmart.href = CONFIG.HOTMART_URL;
 
+// Notícias de cibersegurança (atualiza a cada hora)
+var NEWS_FEEDS = [
+  { nome: 'The Hacker News', url: 'https://feeds.feedburner.com/TheHackersNews' },
+  { nome: 'Krebs', url: 'https://krebsonsecurity.com/feed/' },
+  { nome: 'BleepingComputer', url: 'https://www.bleepingcomputer.com/feed/' }
+];
+function tempoAtras(d) {
+  var s = Math.floor((Date.now() - d.getTime()) / 1000);
+  if (s < 3600) return 'há ' + Math.max(Math.floor(s / 60), 1) + ' min';
+  if (s < 86400) return 'há ' + Math.floor(s / 3600) + 'h';
+  return 'há ' + Math.floor(s / 86400) + ' dias';
+}
+function carregarNoticias() {
+  var grid = document.getElementById('news-grid');
+  if (!grid) return;
+  Promise.all(NEWS_FEEDS.map(function (f) {
+    return fetch('https://api.allorigins.win/get?url=' + encodeURIComponent(f.url))
+      .then(function (r) { return r.json(); })
+      .then(function (j) {
+        var xml = new DOMParser().parseFromString(j.contents, 'text/xml');
+        var items = Array.prototype.slice.call(xml.querySelectorAll('item')).slice(0, 3);
+        return items.map(function (it) {
+          return {
+            fonte: f.nome,
+            titulo: (it.querySelector('title') || {}).textContent || '',
+            link: (it.querySelector('link') || {}).textContent || '',
+            data: new Date((it.querySelector('pubDate') || {}).textContent || Date.now())
+          };
+        });
+      }).catch(function () { return []; });
+  })).then(function (listas) {
+    var todas = [].concat.apply([], listas).filter(function (n) { return n.titulo && n.link; });
+    if (!todas.length) { grid.innerHTML = '<p class="mini">Feeds indisponíveis agora — tente mais tarde.</p>'; return; }
+    todas.sort(function (a, b) { return b.data - a.data; });
+    grid.innerHTML = todas.slice(0, 6).map(function (n) {
+      return '<div class="card reveal vis"><span class="news-src">' + n.fonte + '</span>' +
+        '<a href="' + n.link + '" target="_blank" rel="noopener">' + n.titulo + '</a>' +
+        '<span class="news-time">' + tempoAtras(n.data) + '</span></div>';
+    }).join('');
+    var upd = document.getElementById('news-upd');
+    if (upd) upd.textContent = '· atualizado às ' + new Date().toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' });
+  });
+}
+carregarNoticias();
+setInterval(carregarNoticias, 3600000);
+
 // Reveal on scroll + contadores do hero
 (function () {
   var io = new IntersectionObserver(function (es) {
