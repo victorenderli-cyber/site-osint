@@ -15,7 +15,6 @@
       <a href="#consulta">Consulta R$ 49,90</a>
       <a href="#planos">Empresas</a>
       <a href="#faq">Dúvidas</a>
-      <a class="btn sm" href="#contato">Diagnóstico grátis</a>
     </nav>
   </div>
 </header>
@@ -29,7 +28,6 @@
       <p class="sub">Digite um e-mail, username ou domínio. Pagou, o relatório chega sozinho no seu e-mail em até 24h.</p>
       <div class="cta-row">
         <a class="btn grande" href="#consulta">Verificar agora — R$ 49,90</a>
-        <a class="btn ghost" href="#contato">Falar com especialista</a>
       </div>
     </div>
     <div class="card hero-card" id="consulta">
@@ -73,35 +71,6 @@
     <div class="card destaque"><h3>LGPD + Superfície</h3><p class="valor">R$ 2.990</p><p class="mini">3 domínios · documentos · auditoria p/ DPO · revarredura</p></div>
     <div class="card"><h3>Contínuo</h3><p class="valor">R$ 790/mês</p><p class="mini">Monitoramento · alertas · executivo mensal</p></div>
   </div>
-  <div class="card pay-alt">
-    <div>
-      <h3>Prefere outro meio?</h3>
-      <p class="mini">Mercado Pago, Stripe ou Pix manual — e se já pagou, confirme aqui.</p>
-    </div>
-    <div class="pay-btns">
-      <a class="btn ghost sm" id="link-mp" href="#" target="_blank" rel="noopener">Mercado Pago</a>
-      <a class="btn ghost sm" id="link-stripe" href="#" target="_blank" rel="noopener">Stripe</a>
-    </div>
-  </div>
-  <form id="confirmar" class="card form">
-    <h3>Já paguei</h3>
-    <div class="row2">
-      <label>E-mail<input name="email" type="email" required></label>
-      <label>ID do pagamento<input name="payment_id" required inputmode="numeric"></label>
-    </div>
-    <div class="row2">
-      <label>Tipo
-        <select name="tipo">
-          <option value="email">E-mail</option>
-          <option value="username">Username</option>
-          <option value="dominio">Domínio</option>
-        </select>
-      </label>
-      <label>Alvo<input name="alvo" required></label>
-    </div>
-    <button class="btn" type="submit">Confirmar e gerar relatório</button>
-    <p id="msg-pag" class="mini" role="status"></p>
-  </form>
 </section>
 
 <section id="faq" class="container bloco">
@@ -111,17 +80,6 @@
   <details><summary>E se não achar nada?</summary><p>Ausência de achado não garante inexistência — o relatório indica como aprofundar.</p></details>
 </section>
 
-<section id="contato" class="container bloco">
-  <h2>Diagnóstico gratuito</h2>
-  <form id="lead" class="card form">
-    <div class="row2">
-      <label>Seu nome<input name="nome" required autocomplete="name"></label>
-      <label>WhatsApp ou e-mail<input name="contato" required></label>
-    </div>
-    <button class="btn grande" type="submit">Quero meu diagnóstico</button>
-    <p id="msg" class="mini" role="status"></p>
-  </form>
-</section>
 </main>
 
 <a id="wa-float" href="#" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">WhatsApp</a>
