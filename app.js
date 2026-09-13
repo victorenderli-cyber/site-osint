@@ -21,6 +21,26 @@ var CONFIG = {
 var btnHotmart = document.getElementById('btn-hotmart');
 if (btnHotmart && CONFIG.HOTMART_URL) btnHotmart.href = CONFIG.HOTMART_URL;
 
+// Reveal on scroll + contadores do hero
+(function () {
+  var io = new IntersectionObserver(function (es) {
+    es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('vis'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.card, .bloco h2').forEach(function (el) { el.classList.add('reveal'); io.observe(el); });
+  document.querySelectorAll('.stats strong').forEach(function (el) {
+    var m = el.textContent.match(/(\d+)(.*)/);
+    if (!m) return;
+    var alvo = parseInt(m[1], 10), suf = m[2], t0 = null;
+    function tick(t) {
+      if (!t0) t0 = t;
+      var p = Math.min((t - t0) / 1200, 1);
+      el.textContent = Math.round(alvo * p) + suf;
+      if (p < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  });
+})();
+
 var formPix = document.getElementById('pix-auto');
 if (formPix) formPix.addEventListener('submit', function (e) {
   e.preventDefault();

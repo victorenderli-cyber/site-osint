@@ -36,7 +36,25 @@ nav a:hover{color:#fff}
 .stats div{display:flex;flex-direction:column}
 .stats strong{font-size:28px;color:#fff}
 .stats span{font-size:12.5px;color:var(--mut)}
-.card{background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.015));border:1px solid var(--line);border-radius:18px;padding:26px;box-shadow:0 14px 40px rgba(0,0,0,.4)}
+.card{background:linear-gradient(145deg,#141d42,#0a1030);border:1px solid var(--line);border-radius:20px;padding:26px;box-shadow:8px 8px 24px rgba(0,0,0,.55),-6px -6px 18px rgba(77,124,255,.08),0 14px 40px rgba(0,0,0,.4);transition:transform .18s,box-shadow .18s}
+.card:hover{transform:translateY(-3px);box-shadow:8px 8px 24px rgba(0,0,0,.55),-6px -6px 18px rgba(34,230,200,.14),0 0 28px rgba(34,230,200,.12)}
+.checks{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:20px}
+.check b{color:var(--cy);font-size:15px}
+.check p{font-size:13.5px;color:var(--mut);margin-top:6px}
+.marquee{overflow:hidden;margin-top:26px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:12px 0;font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--mut);white-space:nowrap}
+.marquee .track{display:inline-block;animation:slide 28s linear infinite}
+@keyframes slide{to{transform:translateX(-50%)}}
+.garantia{display:flex;align-items:center;justify-content:space-between;gap:20px;background:linear-gradient(120deg,rgba(34,230,200,.14),rgba(77,124,255,.14));border:1.5px solid var(--cy)}
+.selo{flex-shrink:0;width:120px;height:120px;border-radius:50%;display:flex;align-items:center;justify-content:center;text-align:center;font-weight:800;background:radial-gradient(circle at 35% 30%,#2b3f8f,#141d42);border:2px solid var(--cy);box-shadow:0 0 30px rgba(34,230,200,.35);animation:pulse 2.6s infinite}
+@keyframes pulse{50%{box-shadow:0 0 48px rgba(34,230,200,.55)}}
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .6s,transform .6s}
+.reveal.vis{opacity:1;transform:none}
+.blob{position:fixed;width:520px;height:520px;border-radius:50%;filter:blur(130px);opacity:.28;pointer-events:none;z-index:0;animation:drift 18s ease-in-out infinite alternate}
+.blob.b1{background:#2456d6;top:-160px;right:-140px}
+.blob.b2{background:#8b5cf6;bottom:-180px;left:-160px;animation-delay:-9s}
+@keyframes drift{to{transform:translate(60px,40px) scale(1.12)}}
+main,footer{position:relative;z-index:1}
+@media(max-width:860px){.checks{grid-template-columns:1fr 1fr}}
 .hero-card{border-top:3px solid var(--cy)}
 .card h3{font-size:19px;margin-bottom:4px}
 .valor{font-size:32px;font-weight:800;margin:6px 0 12px;color:var(--cy)}
