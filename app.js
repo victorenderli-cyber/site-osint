@@ -40,16 +40,24 @@ function carregarNoticias() {
     return fetch('https://api.allorigins.win/get?url=' + encodeURIComponent(f.url))
       .then(function (r) { return r.json(); })
       .then(function (j) {
-        var xml = new DOMParser().parseFromString(j.contents, 'text/xml');
-        var items = Array.prototype.slice.call(xml.querySelectorAll('item')).slice(0, 3);
-        return items.map(function (it) {
-          return {
-            fonte: f.nome,
-            titulo: (it.querySelector('title') || {}).textContent || '',
-            link: (it.querySelector('link') || {}).textContent || '',
-            data: new Date((it.querySelector('pubDate') || {}).textContent || Date.now())
-          };
-        });
+        try {
+          var xml = new DOMParser().parseFromString(j.contents, 'text/xml');
+          if (xml.querySelector('parsererror')) return [];
+          var items = Array.prototype.slice.call(xml.querySelectorAll('item')).slice(0, 4);
+          return items.map(function (it) {
+            var t = it.querySelector('title');
+            var l = it.querySelector('link');
+            var g = it.querySelector('guid');
+            var d = it.querySelector('pubDate') || it.querySelector('updated') || it.querySelector('date');
+            var href = l ? (l.getAttribute('href') || l.textContent) : (g ? g.textContent : '');
+            return {
+              fonte: f.nome,
+              titulo: t ? t.textContent.trim() : '',
+              link: (href || '').trim(),
+              data: new Date(d ? d.textContent : Date.now())
+            };
+          });
+        } catch (e) { return []; }
       }).catch(function () { return []; });
   })).then(function (listas) {
     var todas = [].concat.apply([], listas).filter(function (n) { return n.titulo && n.link; });
