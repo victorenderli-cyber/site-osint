@@ -3,7 +3,7 @@ var CONFIG = {
   BACKEND_URL: 'https://site-osint-backend.onrender.com',
   HOTMART_URL: 'https://go.hotmart.com/F107580564I?dp=1',
   // Seu WhatsApp comercial (só números, com DDI+DDD). Vazio = botão oculto.
-  WHATSAPP: '',
+  WHATSAPP: '5555996236696',
   WHATSAPP_MSG: 'Olá! Quero uma proposta para minha empresa.'
 };
 
