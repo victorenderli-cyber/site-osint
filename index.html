@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OSINT Protege — Inteligência de Fontes Abertas para Empresas</title>
-<meta name="description" content="Mostramos o que qualquer pessoa na internet descobre sobre sua empresa — com dados 100% públicos, sem invadir nada. Relatórios OSINT para CISO, DPO e TI.">
+<title>OSINT Protege — Descubra sua exposição em minutos</title>
+<meta name="description" content="Varredura OSINT passiva: consulta única R$ 49,90 com entrega automática. Planos empresariais com contrato.">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -12,178 +12,102 @@
   <div class="container topo-in">
     <div class="logo">OSINT<span>Protege</span></div>
     <nav>
-      <a href="#servicos">Serviços</a>
-      <a href="#como">Como funciona</a>
-      <a href="#planos">Planos</a>
-      <a href="#pagamento">Pagamento</a>
-      <a href="#faq">FAQ</a>
-      <a class="btn" href="#contato">Diagnóstico gratuito</a>
+      <a href="#consulta">Consulta R$ 49,90</a>
+      <a href="#planos">Empresas</a>
+      <a href="#faq">Dúvidas</a>
+      <a class="btn sm" href="#contato">Diagnóstico grátis</a>
     </nav>
   </div>
 </header>
 
 <main>
-<section class="hero container">
-  <div>
-    <p class="kicker">OSINT passivo · 100% público · sem invasão</p>
-    <h1>Descubra o que um atacante vê sobre sua empresa em minutos.</h1>
-    <p class="sub">Mapeamos subdomínios, ambientes de homologação expostos, documentos públicos, metadados e vazamentos conhecidos — e entregamos um relatório objetivo para CISO, DPO e TI agirem.</p>
-    <div class="cta-row">
-      <a class="btn grande" href="#contato">Pedir diagnóstico gratuito</a>
-      <a class="btn ghost" href="#servicos">Ver serviços</a>
+<section class="hero">
+  <div class="container hero-in">
+    <div>
+      <p class="kicker">100% passivo · sem invasão · conforme LGPD</p>
+      <h1>O que um atacante vê sobre você em minutos?</h1>
+      <p class="sub">Digite um e-mail, username ou domínio. Pagou, o relatório chega sozinho no seu e-mail em até 24h.</p>
+      <div class="cta-row">
+        <a class="btn grande" href="#consulta">Verificar agora — R$ 49,90</a>
+        <a class="btn ghost" href="#contato">Falar com especialista</a>
+      </div>
     </div>
-    <p class="nota">Prospecção e diagnóstico usam apenas dados públicos. Nenhum teste ativo (scan, exploit, força bruta) sem termo de escopo assinado.</p>
-  </div>
-  <div class="card hero-card">
-    <h3>Exemplo do que encontramos</h3>
-    <ul>
-      <li>SSO / VPN / portal interno expostos</li>
-      <li>APIs <code>dev / hml / homolog</code> acessíveis</li>
-      <li>Documentos com CPF, RG e e-mails em PDFs públicos</li>
-      <li>Metadados (autor, software, impressora) em arquivos</li>
-      <li>Contas e vazamentos conhecidos por e-mail corporativo</li>
-    </ul>
-    <p class="mini">Baseado em casos reais de cooperativas e prefeituras avaliadas em 2026.</p>
-  </div>
-</section>
-
-<section id="servicos" class="container bloco">
-  <h2>Serviços</h2>
-  <div class="grid3">
-    <div class="card">
-      <h3>Mapa de Superfície Exposta</h3>
-      <p>Subdomínios, DNS, certificados, WAF/CDN, ambientes dev/hml e páginas administrativas visíveis.</p>
-      <p class="preco">a partir de R$ 1.490</p>
-    </div>
-    <div class="card">
-      <h3>Documentos e Dados Expostos (LGPD)</h3>
-      <p>PDFs públicos com dados pessoais, metadados e arquivos históricos no Wayback Machine. Lista para o DPO sanitizar.</p>
-      <p class="preco">a partir de R$ 1.890</p>
-    </div>
-    <div class="card">
-      <h3>Monitoramento de Vazamentos</h3>
-      <p>Verificação de e-mails corporativos em bases públicas de vazamentos + alerta mensal de novos ativos.</p>
-      <p class="preco">a partir de R$ 390/mês</p>
+    <div class="card hero-card" id="consulta">
+      <h3>Consulta única</h3>
+      <p class="valor">R$ 49,90</p>
+      <form id="pix-auto" class="mini-form">
+        <label>E-mail para receber<input name="email" type="email" required placeholder="voce@empresa.com"></label>
+        <div class="row2">
+          <label>Tipo
+            <select name="tipo">
+              <option value="email">E-mail</option>
+              <option value="username">Username</option>
+              <option value="dominio">Domínio</option>
+            </select>
+          </label>
+          <label>Alvo<input name="alvo" required placeholder="alvo@exemplo.com"></label>
+        </div>
+        <button class="btn grande full" type="submit">Pagar e verificar</button>
+      </form>
+      <p id="msg-pix" class="mini" role="status"></p>
+      <p class="mini">Pix/cartão via Hotmart. DNS, certificados, capturas, Wayback, perfis e vazamentos.</p>
     </div>
   </div>
-</section>
-
-<section id="como" class="container bloco">
-  <h2>Como funciona</h2>
-  <ol class="passos">
-    <li><strong>Diagnóstico gratuito:</strong> verificação passiva e resumo dos 5 principais achados.</li>
-    <li><strong>Relatório completo:</strong> entrega em TXT + PDF, com evidências, impacto e correção.</li>
-    <li><strong>Acompanhamento:</strong> revarredura após correção e monitoramento contínuo opcional.</li>
-  </ol>
-  <p class="mini">Ferramentas: theHarvester, Subfinder, Sherlock/Maigret, Holehe, SpiderFoot, BBOT, Wayback — sempre em modo passivo na fase comercial.</p>
 </section>
 
 <section id="planos" class="container bloco">
-  <h2>Planos</h2>
-  <p class="mini">Planos acima da consulta única são tratados pessoalmente: proposta, contrato e documentação completa.</p>
+  <h2>Para empresas</h2>
+  <p class="mini">Atendimento pessoal com proposta, contrato e documentação.</p>
   <div class="grid3">
-    <div class="card">
-      <h3>Essencial</h3>
-      <p class="valor">R$ 1.490</p>
-      <ul>
-        <li>1 domínio</li>
-        <li>Mapa de subdomínios</li>
-        <li>Relatório PDF</li>
-      </ul>
-    </div>
-    <div class="card destaque">
-      <h3>LGPD + Superfície</h3>
-      <p class="valor">R$ 2.990</p>
-      <ul>
-        <li>Até 3 domínios</li>
-        <li>Documentos e metadados</li>
-        <li>Lista de auditoria p/ DPO</li>
-        <li>Revarredura em 30 dias</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>Contínuo</h3>
-      <p class="valor">R$ 790/mês</p>
-      <ul>
-        <li>Monitoramento mensal</li>
-        <li>Alertas de novos ativos</li>
-        <li>Relatório executivo</li>
-      </ul>
-    </div>
+    <div class="card"><h3>Essencial</h3><p class="valor">R$ 1.490</p><p class="mini">1 domínio · mapa de subdomínios · PDF</p></div>
+    <div class="card destaque"><h3>LGPD + Superfície</h3><p class="valor">R$ 2.990</p><p class="mini">3 domínios · documentos · auditoria p/ DPO · revarredura</p></div>
+    <div class="card"><h3>Contínuo</h3><p class="valor">R$ 790/mês</p><p class="mini">Monitoramento · alertas · executivo mensal</p></div>
   </div>
-  <div class="card destaque consulta-unica">
+  <div class="card pay-alt">
     <div>
-      <h3>Consulta única</h3>
-      <p>Verificação pontual de 1 e-mail, 1 username ou 1 domínio em bases públicas — resultado em até 24h por e-mail.</p>
+      <h3>Prefere outro meio?</h3>
+      <p class="mini">Mercado Pago, Stripe ou Pix manual — e se já pagou, confirme aqui.</p>
     </div>
-    <div class="consulta-cta">
-      <p class="valor">R$ 49,90</p>
-      <a class="btn" href="#pagamento">Contratar</a>
-    </div>
-  </div>
-</section>
-
-<section id="pagamento" class="container bloco">
-  <h2>Pagamento</h2>
-  <div class="grid3">
-    <div class="card">
-      <h3>Consulta única — R$ 49,90</h3>
-      <p>Checkout Hotmart (Pix/cartão). Pagou, o relatório sai sozinho por e-mail.</p>
-      <form id="pix-auto" class="mini-form">
-        <label>E-mail<input name="email" type="email" required></label>
-        <label>Tipo
-          <select name="tipo">
-            <option value="email">E-mail</option>
-            <option value="username">Username</option>
-            <option value="dominio">Domínio</option>
-          </select>
-        </label>
-        <label>Alvo<input name="alvo" required placeholder="alvo@exemplo.com"></label>
-        <button class="btn" type="submit">Ir para o pagamento</button>
-      </form>
-      <p id="msg-pix" class="mini" role="status"></p>
-    </div>
-    <div class="card">
-      <h3>Mercado Pago</h3>
-      <p>Cartão ou boleto via link de pagamento.</p>
-      <p><a class="btn ghost" id="link-mp" href="#" target="_blank" rel="noopener">Pagar com Mercado Pago</a></p>
-    </div>
-    <div class="card">
-      <h3>Stripe</h3>
-      <p>Cartão internacional via link seguro.</p>
-      <p><a class="btn ghost" id="link-stripe" href="#" target="_blank" rel="noopener">Pagar com Stripe</a></p>
+    <div class="pay-btns">
+      <a class="btn ghost sm" id="link-mp" href="#" target="_blank" rel="noopener">Mercado Pago</a>
+      <a class="btn ghost sm" id="link-stripe" href="#" target="_blank" rel="noopener">Stripe</a>
     </div>
   </div>
-  <p class="mini">Contratação mediante proposta e confirmação do escopo por e-mail. Diagnóstico inicial gratuito, sem cobrança.</p>
   <form id="confirmar" class="card form">
-    <h3>Já paguei — receber consulta única</h3>
-    <label>E-mail para receber o relatório<input name="email" type="email" required autocomplete="email"></label>
-    <label>Tipo
-      <select name="tipo">
-        <option value="email">E-mail</option>
-        <option value="username">Username</option>
-        <option value="dominio">Domínio</option>
-      </select>
-    </label>
-    <label>Alvo (1 e-mail, username ou domínio)<input name="alvo" required placeholder="alvo@exemplo.com"></label>
-    <label>ID do pagamento (comprovante Mercado Pago)<input name="payment_id" required inputmode="numeric" placeholder="ex: 12345678901"></label>
-    <button class="btn grande" type="submit">Confirmar pagamento e gerar relatório</button>
+    <h3>Já paguei</h3>
+    <div class="row2">
+      <label>E-mail<input name="email" type="email" required></label>
+      <label>ID do pagamento<input name="payment_id" required inputmode="numeric"></label>
+    </div>
+    <div class="row2">
+      <label>Tipo
+        <select name="tipo">
+          <option value="email">E-mail</option>
+          <option value="username">Username</option>
+          <option value="dominio">Domínio</option>
+        </select>
+      </label>
+      <label>Alvo<input name="alvo" required></label>
+    </div>
+    <button class="btn" type="submit">Confirmar e gerar relatório</button>
     <p id="msg-pag" class="mini" role="status"></p>
   </form>
 </section>
 
 <section id="faq" class="container bloco">
-  <h2>Perguntas frequentes</h2>
-  <details><summary>Vocês invadem sistemas?</summary><p>Não. O diagnóstico comercial é 100% passivo. Testes ativos só com contrato e termo de escopo assinado.</p></details>
-  <details><summary>Vocês vendem dados pessoais?</summary><p>Não. Apontamos onde dados estão publicamente expostos para o cliente corrigir. Não coletamos, cruzamos nem comercializamos dados de terceiros.</p></details>
-  <details><summary>Como recebo o relatório?</summary><p>Em TXT + PDF, com achados, evidências públicas, impacto e recomendação objetiva.</p></details>
+  <h2>Dúvidas</h2>
+  <details><summary>Vocês invadem sistemas?</summary><p>Não. Tudo é dado público. Testes ativos só com contrato.</p></details>
+  <details><summary>O que vem no relatório?</summary><p>DNS, certificados, capturas públicas, Wayback, perfis, vazamentos conhecidos — com metodologia e próximos passos.</p></details>
+  <details><summary>E se não achar nada?</summary><p>Ausência de achado não garante inexistência — o relatório indica como aprofundar.</p></details>
 </section>
 
 <section id="contato" class="container bloco">
-  <h2>Peça o diagnóstico gratuito</h2>
+  <h2>Diagnóstico gratuito</h2>
   <form id="lead" class="card form">
-    <label>Seu nome<input name="nome" required autocomplete="name"></label>
-    <label>WhatsApp ou e-mail<input name="contato" required placeholder="(55) 99999-9999 ou voce@empresa.com.br"></label>
+    <div class="row2">
+      <label>Seu nome<input name="nome" required autocomplete="name"></label>
+      <label>WhatsApp ou e-mail<input name="contato" required></label>
+    </div>
     <button class="btn grande" type="submit">Quero meu diagnóstico</button>
     <p id="msg" class="mini" role="status"></p>
   </form>
@@ -193,8 +117,8 @@
 <a id="wa-float" href="#" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">WhatsApp</a>
 <footer>
   <div class="container foot">
-    <p><strong>OSINT Protege</strong> — inteligência de fontes abertas para defesa. Operação passiva, ética e conforme LGPD.</p>
-    <p class="mini">Este site não oferece nem realiza acesso não autorizado, invasão, interceptação ou comercialização de dados pessoais.</p>
+    <p><strong>OSINT Protege</strong> — inteligência de fontes abertas para defesa.</p>
+    <p class="mini">Sem acesso não autorizado, sem invasão, sem comercialização de dados pessoais.</p>
   </div>
 </footer>
 <script src="app.js"></script>

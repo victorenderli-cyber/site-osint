@@ -1,39 +1,44 @@
-*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:#16213a;background:#f6f8fc;line-height:1.5}
-.container{max-width:1020px;margin:0 auto;padding:0 20px}
-.topo{background:#101c3d;color:#fff;position:sticky;top:0;z-index:10}
-.topo-in{display:flex;align-items:center;justify-content:space-between;padding:14px 20px}
-.logo{font-weight:800;font-size:20px}.logo span{color:#5aa2ff}
-nav a{color:#dbe6ff;margin:0 10px;text-decoration:none;font-size:15px}
-.btn{display:inline-block;background:#2456d6;color:#fff;padding:10px 18px;border-radius:8px;text-decoration:none;border:0;cursor:pointer}
-.btn.grande{font-size:17px;padding:13px 22px}
-.btn.ghost{background:transparent;border:2px solid #2456d6;color:#2456d6}
-.hero{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;padding:44px 20px}
-.kicker{color:#2456d6;font-weight:700;text-transform:uppercase;font-size:13px;letter-spacing:.5px}
-h1{font-size:38px;line-height:1.15;margin:.3em 0}
-.sub{font-size:18px;color:#33415e}
-.cta-row{display:flex;gap:12px;margin:18px 0;flex-wrap:wrap}
-.nota,.mini{font-size:13px;color:#5b6b8c}
-.card{background:#fff;border:1px solid #e2e9f5;border-radius:12px;padding:20px;box-shadow:0 2px 10px rgba(16,28,61,.05)}
-.hero-card h3{margin-top:0}
-.hero-card ul{padding-left:18px}
-.bloco{padding:26px 20px}
-.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.preco,.valor{font-weight:800;color:#101c3d}
-.destaque{border:2px solid #2456d6}
-.consulta-unica{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:16px;flex-wrap:wrap}
-.consulta-unica h3{margin:0 0 6px}
-.consulta-unica p{margin:0}
-.consulta-cta{text-align:right;display:flex;align-items:center;gap:14px}
-.consulta-cta .valor{font-size:24px}
-.passos li{margin:8px 0}
-.form label{display:block;margin:10px 0;font-weight:600}
-.form input,.form select{width:100%;padding:10px;margin-top:6px;border:1px solid #c6d3ea;border-radius:8px}
-.check{font-weight:400;font-size:14px}
-.mini-form label{display:block;margin:8px 0;font-weight:600;font-size:14px}
-.mini-form input,.mini-form select{width:100%;padding:8px;margin-top:4px;border:1px solid #c6d3ea;border-radius:8px}
-.mini-form .btn{margin-top:8px}
-footer{background:#101c3d;color:#cdd9f5;margin-top:30px}
-.foot{padding:24px 20px}
-code{background:#eef3ff;padding:1px 6px;border-radius:6px}
-#wa-float{position:fixed;right:18px;bottom:18px;background:#25d366;color:#fff;font-weight:800;padding:14px 20px;border-radius:999px;text-decoration:none;box-shadow:0 4px 14px rgba(0,0,0,.25);z-index:50}
-@media(max-width:800px){.hero,.grid3{grid-template-columns:1fr}h1{font-size:30px}nav a{margin:0 6px}}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;color:#16213a;background:#f4f6fb;line-height:1.55}
+.container{max-width:1080px;margin:0 auto;padding:0 22px}
+.topo{background:rgba(16,28,61,.96);color:#fff;position:sticky;top:0;z-index:10;backdrop-filter:blur(6px)}
+.topo-in{display:flex;align-items:center;justify-content:space-between;padding:13px 22px}
+.logo{font-weight:800;font-size:21px;letter-spacing:.3px}.logo span{color:#5aa2ff}
+nav a{color:#dbe6ff;margin-left:18px;text-decoration:none;font-size:14.5px}
+nav a:hover{color:#fff}
+.btn{display:inline-block;background:linear-gradient(135deg,#2456d6,#3b82f6);color:#fff;padding:11px 22px;border-radius:10px;text-decoration:none;border:0;cursor:pointer;font-weight:700;font-size:15px;box-shadow:0 4px 14px rgba(36,86,214,.35);transition:transform .12s}
+.btn:hover{transform:translateY(-1px)}
+.btn.grande{font-size:17px;padding:14px 26px}
+.btn.ghost{background:#fff;border:2px solid #2456d6;color:#2456d6;box-shadow:none}
+.btn.sm{font-size:13.5px;padding:8px 16px}
+.btn.full{width:100%}
+.hero{background:linear-gradient(160deg,#101c3d 0%,#1b2f6b 60%,#2456d6 100%);color:#fff;padding:56px 0 64px}
+.hero-in{display:grid;grid-template-columns:1.05fr .95fr;gap:36px;align-items:center}
+.kicker{color:#8fb4ff;font-weight:700;text-transform:uppercase;font-size:12.5px;letter-spacing:1px}
+.hero h1{font-size:42px;line-height:1.12;margin:12px 0 14px}
+.hero .sub{font-size:18px;color:#cdd9f5;max-width:480px}
+.cta-row{display:flex;gap:12px;margin-top:22px;flex-wrap:wrap}
+.hero .btn.ghost{border-color:#8fb4ff;color:#fff;background:rgba(255,255,255,.08)}
+.card{background:#fff;border:1px solid #e4eaf6;border-radius:16px;padding:24px;box-shadow:0 8px 28px rgba(16,28,61,.10)}
+.hero-card h3{font-size:20px}
+.valor{font-size:30px;font-weight:800;color:#101c3d;margin:4px 0 12px}
+.hero-card .valor{color:#2456d6}
+.bloco{padding:40px 22px}
+.bloco h2{font-size:28px;margin-bottom:6px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:18px}
+.destaque{border:2px solid #2456d6;background:linear-gradient(180deg,#f5f8ff,#fff)}
+.pay-alt{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:16px;flex-wrap:wrap}
+.pay-btns{display:flex;gap:10px}
+.form{margin-top:16px}
+.form label,.mini-form label{display:block;margin:10px 0;font-weight:600;font-size:14px}
+.form input,.form select,.mini-form input,.mini-form select{width:100%;padding:11px 12px;margin-top:6px;border:1.5px solid #c9d6ee;border-radius:10px;font-size:15px;background:#fbfcff}
+.form input:focus,.mini-form input:focus{border-color:#2456d6;outline:none}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.mini-form .btn{margin-top:10px}
+.nota,.mini{font-size:13px;color:#5b6b8c;margin-top:10px}
+details{background:#fff;border:1px solid #e4eaf6;border-radius:12px;padding:14px 18px;margin:10px 0}
+summary{font-weight:700;cursor:pointer}
+#wa-float{position:fixed;right:20px;bottom:20px;background:#25d366;color:#fff;font-weight:800;padding:15px 22px;border-radius:999px;text-decoration:none;box-shadow:0 6px 18px rgba(0,0,0,.28);z-index:50}
+footer{background:#101c3d;color:#cdd9f5;margin-top:26px}
+.foot{padding:26px 22px}
+@media(max-width:860px){.hero-in,.grid3,.row2{grid-template-columns:1fr}.hero h1{font-size:31px}nav a{margin-left:10px;font-size:13px}.pay-alt{flex-direction:column;align-items:stretch}}
