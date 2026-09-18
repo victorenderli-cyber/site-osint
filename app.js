@@ -24,7 +24,7 @@ var CONFIG = {
 var btnHotmart = document.getElementById('btn-hotmart');
 if (btnHotmart && CONFIG.ASAAS_LINK) {
   btnHotmart.href = CONFIG.ASAAS_LINK;
-  btnHotmart.textContent = 'Pagar R$ 199,90 no Pix';
+  btnHotmart.textContent = 'Pagar R$ 199,90 (Pix, cartão ou boleto)';
 } else if (btnHotmart && CONFIG.HOTMART_URL) btnHotmart.href = CONFIG.HOTMART_URL;
 
 // Notícias de cibersegurança (atualiza a cada hora)
