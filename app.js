@@ -4,7 +4,7 @@ var CONFIG = {
   HOTMART_URL: 'https://go.hotmart.com/F107580564I?dp=1',
   // Link fixo de pagamento Asaas (cobrança Pix R$ 199,90). Se preenchido,
   // o botão de compra usa a Asaas em vez da Hotmart.
-  ASAAS_LINK: '',
+  ASAAS_LINK: 'https://www.asaas.com/c/6yclgzlgp3zwdl18',
   // Seu WhatsApp comercial (só números, com DDI+DDD). Vazio = botão oculto.
   WHATSAPP: '5555996236696',
   WHATSAPP_MSG: 'Olá! Quero uma proposta para minha empresa.'
