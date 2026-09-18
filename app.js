@@ -2,6 +2,9 @@
 var CONFIG = {
   BACKEND_URL: 'https://site-osint-backend.onrender.com',
   HOTMART_URL: 'https://go.hotmart.com/F107580564I?dp=1',
+  // Link fixo de pagamento Asaas (cobrança Pix R$ 199,90). Se preenchido,
+  // o botão de compra usa a Asaas em vez da Hotmart.
+  ASAAS_LINK: '',
   // Seu WhatsApp comercial (só números, com DDI+DDD). Vazio = botão oculto.
   WHATSAPP: '5555996236696',
   WHATSAPP_MSG: 'Olá! Quero uma proposta para minha empresa.'
@@ -19,7 +22,10 @@ var CONFIG = {
 })();
 
 var btnHotmart = document.getElementById('btn-hotmart');
-if (btnHotmart && CONFIG.HOTMART_URL) btnHotmart.href = CONFIG.HOTMART_URL;
+if (btnHotmart && CONFIG.ASAAS_LINK) {
+  btnHotmart.href = CONFIG.ASAAS_LINK;
+  btnHotmart.textContent = 'Pagar R$ 199,90 no Pix';
+} else if (btnHotmart && CONFIG.HOTMART_URL) btnHotmart.href = CONFIG.HOTMART_URL;
 
 // Notícias de cibersegurança (atualiza a cada hora)
 var NEWS_FEEDS = [
