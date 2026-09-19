@@ -7,7 +7,7 @@ var CONFIG = {
   ASAAS_LINK: 'https://www.asaas.com/c/6yclgzlgp3zwdl18',
   // Seu WhatsApp comercial (só números, com DDI+DDD). Vazio = botão oculto.
   WHATSAPP: '5555996236696',
-  WHATSAPP_MSG: 'Olá! Quero uma proposta para minha empresa.'
+  WHATSAPP_MSG: 'Olá! Vi o site e quero uma proposta.'
 };
 
 (function () {
